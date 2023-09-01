@@ -7,7 +7,7 @@ pub fn render(factory: impl GuiFactory) {
 
 #[cfg(test)]
 mod demo {
-  use crate::behavioral::abstract_factory::gui_elements_lib::{
+  use crate::creational::abstract_factory::gui_elements_lib::{
     unix_gui::UnixGuiFactory, windows_gui::WindowsGuiFactory,
   };
 

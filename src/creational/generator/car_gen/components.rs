@@ -8,7 +8,7 @@ pub struct GPSNavigator {
   route: String,
 }
 
-#[derive(Default)]
+#[derive(Copy, Clone, Debug, Default)]
 pub enum Transmission {
   #[default]
   SingleSpeed,
@@ -16,8 +16,6 @@ pub enum Transmission {
   Automatic,
   SemiAutomatic,
 }
-
-pub struct TripComputer {}
 
 impl Engine {
   pub fn new(volume: f64, mileage: f64) -> Self {
@@ -67,6 +65,10 @@ impl Default for GPSNavigator {
 
 impl GPSNavigator {
   pub fn new(route: String) -> Self {
+    Self { route }
+  }
+
+  pub fn from_route(route: String) -> Self {
     Self { route }
   }
 
